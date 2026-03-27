@@ -1,124 +1,101 @@
-SwiftVisa-AI-Based-Visa-Eligibility-Screening-Agent-Batch13
-Milestone 1: Visa Policy Knowledge Base Construction
+# SwiftVisa-AI-Based-Visa-Eligibility-Screening-Agent-Batch-13
 
-Description
+## AI-Based Visa Eligibility Screening Assistant
 
-In this milestone, we build the knowledge base for the SwiftVisa project.
-The knowledge base acts as the foundational data layer that stores all visa-related information in a structured and machine-understandable format.
-The main objective of Milestone-1 is to convert visa rules into a searchable semantic database.
-This enables the AI system to retrieve correct immigration policies when a user asks a question.
+## 1. Introduction
+SwiftVisa AI is an intelligent web-based application designed to simplify the visa eligibility checking process using Artificial Intelligence.
 
-It requires:
+The system helps users:
+- Check whether they are eligible for a visa
+- Identify missing requirements
+- Understand eligibility through clear explanations
 
- 1.Clean and structured information
+This project combines:
+- Rule-based logic
+- Retrieval-Augmented Generation (RAG)
+- Large Language Model (LLM)
 
- 2. Meaningful knowledge units
+---
 
- 3. Numerical representation of text
+## 2. Objective
+- Automate visa eligibility checking
+- Provide accurate and structured information
+- Improve user understanding using AI explanations
+- Reduce confusion in visa applications
 
-This milestone prepares visa data in a format suitable for AI retrieval systems such as RAG and chat assistants.
+---
 
-Steps Involved
+## 3. System Workflow
+User Input → Processing → Eligibility Check → Embeddings → FAISS Retrieval → Prompt → LLM → Output
 
-1. Data Collection
+---
 
-Visa information is collected from official government immigration portals of different countries.
+## 4. Milestone 1 – Data Preparation
+- Collected visa data for multiple countries
+- Included visa types: Tourist, Student, Work, Business
+- Stored in JSON format
+- Converted records into chunks
+- Generated embeddings using Sentence Transformers
+- Stored vectors in FAISS database
 
-For each country, the following visa categories are considered:
+---
 
-Student
-Tourist
-Work
-Family
+## 5. Milestone 2 – RAG Pipeline
+- Converted user query into embeddings
+- Retrieved top matching visa data using FAISS
+- Applied similarity matching
+- Built structured prompts
+- Used Groq LLaMA 3.1 for generating responses
 
-2. Identify Required Information
+---
 
-For every country and visa category, the required details are extracted:
+## 6. Milestone 3 – User Interface
+- Built using Streamlit
+- Collected user details (age, country, job, etc.)
+- Dynamic visa-based questions
+- Clean and simple UI design
 
-Eligibility fields
-Required documents
-Official source
+---
 
-3. Structured Storage (JSON)
+## 7. Milestone 4 – Deployment
+- Deployed on Streamlit Cloud
+- Hosted on GitHub
+- Enabled public access
 
-All collected visa information is stored in a structured file:
-visa_data.json
+---
 
-The dataset contains:
+## 8. Eligibility Logic
+- Missing requirement → Not Eligible
+- All conditions satisfied → Eligible
+- Checks include passport, funds, and language tests
 
-Country name
-Visa type
-Visa category
-Eligibility fields
-Required documents
-Official source link
+---
 
-4. Text Conversion
+## 9. Output
+- Eligibility status
+- Missing requirements
+- Required documents
+- AI-generated explanation
 
-Structured JSON data is converted into readable text so that AI models can understand it.
+---
 
-Example:
+## 10. Technologies Used
+- Python
+- Streamlit
+- FAISS
+- Sentence Transformers
+- Groq API (LLaMA 3.1)
+- JSON
 
-Country: Germany
-Visa Type: Student Visa
-Eligibility Fields: Passport, Admission Letter
-Documents Required: Passport Copy, Blocked Account Proof
+---
 
-5. Semantic Chunking
-The readable text is divided into smaller meaningful units called chunks.
+## 11. Future Scope
+- Add more countries
+- Improve UI
+- Add chatbot interaction
+- Real-time updates
 
-In this project:
-One visa policy = One chunk
+---
 
-Reason:
-Each visa rule is independent
-Improves retrieval accuracy
-Avoids unnecessary context mixing
-
-Chunk Size: One visa record
-Overlap: 0
-
-6. Embedding Generation
-
-Each chunk is converted into a numerical vector using a sentence-transformer embedding model.
-
-These vectors represent the semantic meaning of the text.
-
-This allows the system to understand similar phrases such as:
-
-financial proof ≈ bank balance
-student visa ≈ study permit
-
-7. Vector Database (FAISS)
-
-All embeddings are stored inside a FAISS vector database.
-
-FAISS enables:
-
-Fast similarity search
-
-Semantic retrieval
-
-Natural language querying
-
-FAISS stores vectors only, so original readable text is mapped using a metadata file.
-
-Final Outcome
-
-At the end of Milestone-1 we obtain:
-
-A structured visa dataset
-
-Semantic embeddings of visa policies
-
-A FAISS vector knowledge base
-
-This knowledge base will be used in Milestone-2 to:
-
-Retrieve relevant visa policies
-
-Provide context to the AI decision model (RAG pipeline)
-
-Summary
-
-Milestone-1 builds the semantic retrieval foundation of the SwiftVisa system by transforming visa rules into an AI-searchable knowledge base.
+## 12. Conclusion
+SwiftVisa AI simplifies visa eligibility checking using AI and improves user experience with clear and accurate results.
