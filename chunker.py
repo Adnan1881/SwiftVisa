@@ -1,7 +1,7 @@
 from email.mime import text
 import json
 def load_chunks():
-    with open("visa_data.json", "r", encoding="utf-8") as f:
+    with open("visa_requirements.json", "r", encoding="utf-8") as f:
         data = json.load(f)
 
     chunks = []
