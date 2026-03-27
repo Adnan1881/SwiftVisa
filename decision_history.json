@@ -1,0 +1,7 @@
+{"date": "2026-02-26 16:43:44.424098", "applicant": "Adnan", "country": "UAE", "decision": "Error connecting to LM Studio: 400 Client Error: Bad Request for url: http://localhost:1234/v1/chat/..."}
+{"timestamp": "2026-02-26 16:45:53.316367", "user": "adnan", "country": "USA", "visa": "Work", "status": "Processed"}
+{"timestamp": "2026-02-26 16:49:29.824652", "user": "adnan", "country": "USA", "visa": "Work", "status": "Processed"}
+{"timestamp": "2026-02-26 16:54:25.406255", "user": "adnan", "country": "Germany", "visa": "Work", "status": "Processed"}
+{"timestamp": "2026-02-26 16:59:41.258627", "name": "adnan", "country": "Canada", "visa": "work", "status": "**1. ** [More Info Needed]", "report_preview": "Okay, here\u2019s an evaluation of the applicant based solely on the provided Canadian visa policy documents:\n\n**1. ELIGIBILITY STATUS:** [More Info Needed..."}
+{"timestamp": "2026-02-26 17:04:04.751006", "name": "adnan", "country": "germany", "visa": "tourist", "status": "Unknown", "report_preview": "[ERROR] Timeout Error: LM Studio took too long to respond"}
+{"timestamp": "2026-02-26 17:06:36.382934", "name": "adnan", "country": "germany", "visa": "tourist", "status": "**1. ** [More Info Needed]", "report_preview": "Okay, here\u2019s an evaluation of the applicant based solely on the provided policy context:\n\n**1. ELIGIBILITY STATUS:** [More Info Needed]\n**2. CONFIDENC..."}
