@@ -1,5 +1,6 @@
 import faiss
 import pickle
+import os
 from sentence_transformers import SentenceTransformer
 
 
@@ -10,10 +11,17 @@ class VisaSemanticSearch:
         self.model = SentenceTransformer("all-MiniLM-L6-v2")
 
         print("Loading FAISS index...")
-        self.index = faiss.read_index("vector_store/visa.index")
+
+        base_path = os.path.dirname(__file__)
+
+        index_path = os.path.join(base_path, "vector_store", "visa.index")
+        metadata_path = os.path.join(base_path, "vector_store", "metadata.pkl")
+
+        # Load FAISS index
+        self.index = faiss.read_index(index_path)
 
         print("Loading metadata...")
-        with open("vector_store/metadata.pkl", "rb") as f:
+        with open(metadata_path, "rb") as f:
             self.data = pickle.load(f)
 
         print("Semantic search ready.\n")
@@ -21,7 +29,6 @@ class VisaSemanticSearch:
     def search(self, query, top_k=5):
         """
         Pure semantic retrieval.
-        No rule-based filtering.
         """
 
         query_vector = self.model.encode([query])
